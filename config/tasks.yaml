@@ -1,0 +1,29 @@
+requirements_task:
+  description: >
+    사용자의 요청사항: "{topic}"
+    위 요청사항을 분석하여 다음 내용을 포함한 기획안을 작성하세요:
+    1. 웹사이트의 목적과 타겟 사용자 정의
+    2. 주요 기능 목록 (Feature List)
+    3. 사이트 구조 (Sitemap)
+  expected_output: >
+    명확하게 정리된 웹사이트 기획 문서 (Markdown 형식)
+  agent: project_manager
+
+design_task:
+  description: >
+    기획안을 바탕으로 웹사이트의 메인 페이지 레이아웃과 디자인 컨셉을 잡으세요.
+    색상 팔레트, 폰트 스타일, 주요 UI 컴포넌트의 배치를 설명해야 합니다.
+  expected_output: >
+    웹사이트 디자인 명세서 (색상 코드, 폰트, 레이아웃 설명 포함)
+  agent: web_designer
+
+development_task:
+  description: >
+    디자인 명세서를 바탕으로 실제 'index.html', 'style.css', 'script.js' 코드를 작성하세요.
+    'File Write Tool'을 사용하여 각 코드를 파일로 저장하세요.
+    
+    모든 파일이 저장된 후, 'Git Push Tool'을 사용하여 "Initial commit with basic website structure"라는 메시지와 함께 코드를 원격 저장소에 업로드하세요.
+    이 작업은 반드시 코드 파일이 생성된 후에 수행되어야 합니다.
+  expected_output: >
+    완성된 웹사이트 소스 코드 파일(HTML, CSS, JS)이 로컬에 생성되고 GitHub에 푸시되었다는 확인 메시지.
+  agent: web_developer
