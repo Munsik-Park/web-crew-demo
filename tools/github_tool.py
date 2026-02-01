@@ -9,8 +9,10 @@ class GitPushTool(BaseTool):
         "Use this tool when you have finished writing code and want to save it to the repository."
     )
 
+
     def _run(self, commit_message: str) -> str:
-        repo_path = os.getcwd()
+        # repo_path = os.getcwd() # Wrong: using CWD
+        repo_path = '/Users/boggle70/work/coding-crew/web_crew/src/web_crew' # Correct: absolute path
         remote_url = "https://github.com/Munsik-Park/web-crew-demo.git"
         
         try:

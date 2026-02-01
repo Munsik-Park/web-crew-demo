@@ -1,10 +1,13 @@
 requirements_task:
   description: >
     사용자의 요청사항: "{topic}"
+    참고/개선 대상 URL: "{target_url}"
+    
     위 요청사항을 분석하여 다음 내용을 포함한 기획안을 작성하세요:
-    1. 웹사이트의 목적과 타겟 사용자 정의
-    2. 주요 기능 목록 (Feature List)
-    3. 사이트 구조 (Sitemap)
+    1. (URL이 있는 경우) 대상 웹사이트의 현재 구조와 문제점 분석 ('ScrapeWebsiteTool' 사용)
+    2. 웹사이트의 목적과 타겟 사용자 정의
+    3. 주요 기능 목록 (Feature List) - 개선 사항 포함
+    4. 사이트 구조 (Sitemap)
   expected_output: >
     명확하게 정리된 웹사이트 기획 문서 (Markdown 형식)
   agent: project_manager
@@ -20,10 +23,16 @@ design_task:
 development_task:
   description: >
     디자인 명세서를 바탕으로 실제 'index.html', 'style.css', 'script.js' 코드를 작성하세요.
-    'File Write Tool'을 사용하여 각 코드를 파일로 저장하세요.
     
-    모든 파일이 저장된 후, 'Git Push Tool'을 사용하여 "Initial commit with basic website structure"라는 메시지와 함께 코드를 원격 저장소에 업로드하세요.
-    이 작업은 반드시 코드 파일이 생성된 후에 수행되어야 합니다.
+    [중요] 코드를 생성만 하지 말고, 반드시 'File Write Tool'을 사용하여 아래 절대 경로에 저장해야 합니다.
+    예시: FileWriteTool(filename='/Users/boggle70/work/coding-crew/web_crew/src/web_crew/index.html', content='...')
+    
+    저장 경로:
+    1. /Users/boggle70/work/coding-crew/web_crew/src/web_crew/index.html
+    2. /Users/boggle70/work/coding-crew/web_crew/src/web_crew/style.css
+    3. /Users/boggle70/work/coding-crew/web_crew/src/web_crew/script.js
+    
+    모든 파일이 저장된 후, 'Git Push Tool'을 사용하여 "Update website based on new requirements"라는 메시지와 함께 코드를 원격 저장소에 업로드하세요.
   expected_output: >
-    완성된 웹사이트 소스 코드 파일(HTML, CSS, JS)이 로컬에 생성되고 GitHub에 푸시되었다는 확인 메시지.
+    지정된 절대 경로에 파일 저장 및 GitHub 푸시 완료 메시지.
   agent: web_developer

@@ -7,6 +7,7 @@ from dotenv import load_dotenv
 # Import the custom tool
 from tools.github_tool import GitPushTool
 from tools.file_tools import FileWriteTool
+from crewai_tools import ScrapeWebsiteTool
 
 load_dotenv()
 
@@ -28,6 +29,7 @@ class WebCrew:
 	def project_manager(self) -> Agent:
 		return Agent(
 			config=self.agents_config['project_manager'],
+			tools=[ScrapeWebsiteTool()],
 			verbose=True,
 			llm=self.llm
 		)

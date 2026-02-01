@@ -3,376 +3,143 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>모던 포트폴리오 웹사이트 디자인 명세서</title>
-    <style>
-        body {
-            font-family: 'Noto Sans KR', sans-serif; /* 기본 폰트 */
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            color: #333; /* 기본 텍스트 색상 */
-            background-color: #f9f9f9; /* 기본 배경 색상 */
-        }
-
-        h1, h2, h3 {
-            font-weight: 700;
-            color: #222;
-        }
-
-        h1 {
-            font-size: 2.5em;
-            margin-bottom: 0.5em;
-        }
-
-        h2 {
-            font-size: 2em;
-            margin-bottom: 0.7em;
-        }
-
-        h3 {
-            font-size: 1.6em;
-            margin-bottom: 0.5em;
-        }
-
-        section {
-            padding: 50px 0;
-            /*background-color: #fff;*/ /* 섹션별 배경색 */
-        }
-
-        .container {
-            width: 80%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        /* 색상 팔레트 */
-        .color-palette {
-            display: flex;
-            justify-content: space-around;
-            margin-bottom: 20px;
-        }
-
-        .color-box {
-            width: 100px;
-            height: 100px;
-            border: 1px solid #ccc;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            font-weight: bold;
-        }
-
-        /* 폰트 스타일 */
-        .font-style {
-            margin-bottom: 20px;
-        }
-
-        .font-style p {
-            font-size: 1.2em;
-            line-height: 1.8;
-        }
-
-        /* 레이아웃 설명 */
-        .layout-description {
-            margin-bottom: 20px;
-        }
-
-        /* UI 컴포넌트 예시 */
-        .button {
-            background-color: #007bff; /* 주요 액션 버튼 색상 */
-            color: white;
-            padding: 12px 24px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 1em;
-            transition: background-color 0.3s ease;
-        }
-
-        .button:hover {
-            background-color: #0056b3;
-        }
-
-        /* Glassmorphism 스타일 */
-        .glassmorphism {
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 16px;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-            backdrop-filter: blur(5px);
-            -webkit-backdrop-filter: blur(5px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            padding: 20px;
-        }
-
-        /* Bento Grid 스타일 */
-        .bento-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            grid-gap: 20px;
-        }
-
-        .bento-item {
-            padding: 20px;
-            border-radius: 10px;
-            background-color: #fff;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        /* 헤더 스타일 */
-        header {
-            background-color: #fff; /* 헤더 배경색 */
-            padding: 20px 0;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
-            position: sticky;
-            top: 0;
-            z-index: 100; /* 다른 요소 위에 표시 */
-        }
-
-        header .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        header h1 {
-            font-size: 1.8em;
-            margin: 0;
-        }
-
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-        }
-
-        nav li {
-            margin-left: 20px;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: #333;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        nav a:hover {
-            color: #007bff;
-        }
-
-        /* 푸터 스타일 */
-        footer {
-            background-color: #333; /* 푸터 배경색 */
-            color: #fff;
-            padding: 20px 0;
-            text-align: center;
-        }
-
-        /* Hero 섹션 스타일 */
-        .hero {
-            background-color: #e9ecef; /* Hero 배경색 */
-            padding: 100px 0;
-            text-align: center;
-        }
-
-        .hero h1 {
-            font-size: 3em;
-            margin-bottom: 20px;
-        }
-
-        .hero p {
-            font-size: 1.4em;
-            color: #555;
-        }
-
-        /* 미디어 쿼리 (반응형 디자인) */
-        @media (max-width: 768px) {
-            .container {
-                width: 90%;
-            }
-
-            h1 {
-                font-size: 2em;
-            }
-
-            h2 {
-                font-size: 1.7em;
-            }
-
-            .bento-grid {
-                grid-template-columns: 1fr;
-            }
-
-            header .container {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            header h1 {
-                margin-bottom: 10px;
-            }
-
-            nav ul {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            nav li {
-                margin-left: 0;
-                margin-top: 10px;
-            }
-        }
-
-    </style>
+    <title>Connev.io - 기술 회사 홈페이지</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-
+    <!-- Header -->
     <header>
-        <div class="container">
-            <h1>Portfolio</h1>
-            <nav>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
+        <div class="logo">
+            <a href="#">Connev.io</a>
         </div>
+        <nav>
+            <ul>
+                <li><a href="#about">회사 소개</a></li>
+                <li><a href="#services">서비스</a></li>
+                <li><a href="#tech">기술 스택</a></li>
+                <li><a href="#portfolio">포트폴리오</a></li>
+                <li><a href="#blog">블로그</a></li>
+                <li><a href="#support">고객 지원</a></li>
+                <li><a href="#careers">채용</a></li>
+                <li><a href="#contact">연락처</a></li>
+            </ul>
+        </nav>
+        <button class="cta-button">문의하기</button>
     </header>
 
-    <section class="hero" id="home">
-        <div class="container">
-            <h1>안녕하세요, 저는 웹 디자이너입니다.</h1>
-            <p>사용자 경험을 최우선으로 생각하며 아름다운 웹사이트를 만듭니다.</p>
-            <button class="button">자세히 보기</button>
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="hero-content">
+            <h1>혁신적인 기술 솔루션으로 당신의 비즈니스를 성장시키세요</h1>
+            <p>Connev.io는 최첨단 기술을 통해 고객의 성공을 돕습니다.</p>
+            <button class="cta-button accent">상담 신청</button>
+            <button class="cta-button">자료 다운로드</button>
         </div>
     </section>
 
-    <section id="design-concept">
-        <div class="container">
-            <h2>디자인 컨셉</h2>
-            <p>
-                본 포트폴리오 웹사이트는 모던하고 미니멀한 디자인을 추구합니다. 최신 웹 디자인 트렌드인 Glassmorphism과 Bento Grid 레이아웃을 활용하여 시각적인 매력과 사용성을 동시에 확보합니다.
-            </p>
-        </div>
-    </section>
-
-    <section id="color-palette">
-        <div class="container">
-            <h2>색상 팔레트</h2>
-            <div class="color-palette">
-                <div class="color-box" style="background-color: #007bff;">#007bff</div>
-                <div class="color-box" style="background-color: #28a745;">#28a745</div>
-                <div class="color-box" style="background-color: #dc3545;">#dc3545</div>
-                <div class="color-box" style="background-color: #f8f9fa; color: #333;">#f8f9fa</div>
-                <div class="color-box" style="background-color: #343a40;">#343a40</div>
+    <!-- Services Section -->
+    <section id="services">
+        <h2>주요 서비스</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <img src="placeholder-icon.png" alt="Service 1">
+                <h3>서비스 1</h3>
+                <p>서비스 1에 대한 간략한 설명입니다. 이 서비스는 고객에게 최고의 가치를 제공합니다.</p>
+                <a href="#">자세히 보기</a>
             </div>
-            <p>
-                **주요 색상:**
-                <ul>
-                    <li>**#007bff (Blue):** 주요 액션 버튼 및 링크에 사용되어 사용자의 시선을 유도합니다.</li>
-                    <li>**#28a745 (Green):** 긍정적인 피드백 또는 성공적인 결과에 사용됩니다.</li>
-                    <li>**#dc3545 (Red):** 오류 또는 경고 메시지에 사용됩니다.</li>
-                    <li>**#f8f9fa (Light Gray):** 배경색으로 사용하여 콘텐츠를 돋보이게 합니다.</li>
-                    <li>**#343a40 (Dark Gray):** 텍스트 및 헤딩에 사용되어 가독성을 높입니다.</li>
-                </ul>
-            </p>
+            <div class="service-card">
+                <img src="placeholder-icon.png" alt="Service 2">
+                <h3>서비스 2</h3>
+                <p>서비스 2에 대한 간략한 설명입니다. 이 서비스는 고객의 특정 요구사항을 충족합니다.</p>
+                <a href="#">자세히 보기</a>
+            </div>
+            <div class="service-card">
+                <img src="placeholder-icon.png" alt="Service 3">
+                <h3>서비스 3</h3>
+                <p>서비스 3에 대한 간략한 설명입니다. 이 서비스는 혁신적인 접근 방식을 제공합니다.</p>
+                <a href="#">자세히 보기</a>
+            </div>
+            </div>
+    </section>
+
+    <!-- Technology Section -->
+    <section id="tech">
+        <h2>기술 스택</h2>
+        <div class="tech-stack">
+            <img src="placeholder-logo.png" alt="기술 1">
+            <img src="placeholder-logo.png" alt="기술 2">
+            <img src="placeholder-logo.png" alt="기술 3">
+            <img src="placeholder-logo.png" alt="기술 4">
         </div>
     </section>
 
-    <section id="font-style">
-        <div class="container">
-            <h2>폰트 스타일</h2>
-            <div class="font-style">
-                <h3>제목</h3>
-                <p style="font-family: 'Noto Sans KR', sans-serif; font-weight: 700;">Noto Sans KR - Bold</p>
-                <h3>본문</h3>
-                <p style="font-family: 'Noto Sans KR', sans-serif; font-weight: 400;">Noto Sans KR - Regular</p>
+    <!-- Portfolio Section -->
+    <section id="portfolio">
+        <h2>포트폴리오</h2>
+        <div class="portfolio-grid">
+            <div class="portfolio-item">
+                <img src="placeholder-project.png" alt="프로젝트 1">
+                <h3>프로젝트 1</h3>
+                <p>고객사: Connev</p>
+                <a href="#">자세히 보기</a>
             </div>
-            <p>
-                **폰트:** Noto Sans KR (Google Fonts)
-                <ul>
-                    <li>제목: Bold (700)</li>
-                    <li>본문: Regular (400)</li>
-                </ul>
-                Noto Sans KR은 가독성이 뛰어나고 다양한 언어를 지원하는 폰트로, 웹사이트의 전체적인 통일성을 유지하면서도 정보를 명확하게 전달하는 데 효과적입니다.
-            </p>
-        </div>
-    </section>
-
-    <section id="layout">
-        <div class="container">
-            <h2>레이아웃</h2>
-            <div class="layout-description">
-                <h3>주요 레이아웃 요소</h3>
-                <ul>
-                    <li>**헤더:** 웹사이트 제목, 네비게이션 메뉴를 포함합니다. 페이지 상단에 고정되어 사용자가 언제든지 다른 섹션으로 이동할 수 있도록 합니다.</li>
-                    <li>**Hero 섹션:** 웹사이트의 첫인상을 결정짓는 중요한 영역입니다. 개인의 핵심 역량과 가치를 간결하게 소개합니다.</li>
-                    <li>**소개 (About) 섹션:** 개인의 배경, 경험, 기술, 가치관 등을 상세하게 설명하여 신뢰도를 높입니다.</li>
-                    <li>**포트폴리오 (Portfolio) 섹션:** 개인의 기술과 능력을 입증하는 핵심 섹션으로, 최고의 프로젝트를 선별하여 상세하게 제시합니다. Bento Grid 레이아웃을 사용하여 시각적인 다양성을 제공합니다.</li>
-                    <li>**연락처 (Contact) 섹션:** 잠재적 고객 또는 고용주가 쉽게 연락할 수 있도록 명확하고 간편한 연락 방법을 제공합니다.</li>
-                    <li>**푸터:** 저작권 정보, 소셜 미디어 링크 등을 포함합니다.</li>
-                </ul>
+             <div class="portfolio-item">
+                <img src="placeholder-project.png" alt="프로젝트 2">
+                <h3>프로젝트 2</h3>
+                <p>고객사: Connev</p>
+                <a href="#">자세히 보기</a>
             </div>
-
-            <h3>Bento Grid 레이아웃 예시</h3>
-            <div class="bento-grid">
-                <div class="bento-item">
-                    <h4>프로젝트 1</h4>
-                    <p>프로젝트 개요 설명</p>
-                </div>
-                <div class="bento-item">
-                    <h4>프로젝트 2</h4>
-                    <p>프로젝트 개요 설명</p>
-                </div>
-                <div class="bento-item">
-                    <h4>프로젝트 3</h4>
-                    <p>프로젝트 개요 설명</p>
-                </div>
-                <div class="bento-item">
-                    <h4>프로젝트 4</h4>
-                    <p>프로젝트 개요 설명</p>
-                </div>
+             <div class="portfolio-item">
+                <img src="placeholder-project.png" alt="프로젝트 3">
+                <h3>프로젝트 3</h3>
+                <p>고객사: Connev</p>
+                <a href="#">자세히 보기</a>
             </div>
         </div>
     </section>
 
-    <section id="ui-components">
-        <div class="container">
-            <h2>UI 컴포넌트</h2>
-            <p>
-                웹사이트의 UI 컴포넌트는 사용자의 편의성을 고려하여 디자인되었습니다. 주요 컴포넌트는 다음과 같습니다.
-            </p>
-            <ul>
-                <li>**버튼:** 주요 액션 (예: 자세히 보기, 문의하기)을 유도하는 데 사용됩니다.</li>
-                <li>**입력 양식:** 사용자로부터 정보를 수집하는 데 사용됩니다.</li>
-                <li>**이미지:** 프로젝트 결과물 또는 개인 프로필 사진을 보여주는 데 사용됩니다.</li>
-                <li>**아이콘:** 시각적인 단서를 제공하고 사용자 경험을 향상시키는 데 사용됩니다.</li>
-            </ul>
-        </div>
-    </section>
-
-    <section id="glassmorphism-example">
-        <div class="container">
-            <h2>Glassmorphism 스타일 예시</h2>
-            <div class="glassmorphism">
-                <h3>Glassmorphism 효과</h3>
-                <p>Glassmorphism 스타일은 배경 흐림 효과와 투명도를 사용하여 유리와 같은 느낌을 줍니다. 이는 웹사이트에 깊이감과 고급스러움을 더하는 데 효과적입니다.</p>
+    <!-- Blog Section -->
+    <section id="blog">
+        <h2>블로그</h2>
+        <div class="blog-list">
+            <div class="blog-post">
+                <h3>최신 블로그 게시물 1</h3>
+                <p>날짜: 2024년 5월 15일</p>
+                <p>최신 블로그 게시물에 대한 간략한 내용입니다.</p>
+                <a href="#">자세히 보기</a>
+            </div>
+             <div class="blog-post">
+                <h3>최신 블로그 게시물 2</h3>
+                <p>날짜: 2024년 5월 10일</p>
+                <p>최신 블로그 게시물에 대한 간략한 내용입니다.</p>
+                <a href="#">자세히 보기</a>
             </div>
         </div>
     </section>
 
+    <!-- CTA Section -->
+    <section id="cta">
+        <h2>지금 바로 Connev.io와 함께 시작하세요!</h2>
+        <button class="cta-button accent">문의하기</button>
+        <button class="cta-button">상담 신청</button>
+    </section>
+
+    <!-- Footer -->
     <footer>
-        <div class="container">
-            <p>&copy; 2024 My Portfolio. All rights reserved.</p>
+        <div class="footer-info">
+            <p>Connev.io | 주소: 서울특별시 강남구 | 전화번호: 02-123-4567 | 이메일: info@connev.io</p>
+            <p>© 2024 Connev.io. All rights reserved.</p>
+        </div>
+        <div class="social-links">
+            <a href="#"><img src="placeholder-social.png" alt="Facebook"></a>
+            <a href="#"><img src="placeholder-social.png" alt="Twitter"></a>
+            <a href="#"><img src="placeholder-social.png" alt="LinkedIn"></a>
         </div>
     </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>
